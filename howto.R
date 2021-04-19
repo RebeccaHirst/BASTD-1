@@ -1,4 +1,4 @@
-'''
+'
 A working example of how to implement OSARI_analyze and OSARI_visualize.
 
 Author contact: jasonhe93@gmail.com
@@ -7,18 +7,29 @@ To install the retimes package, which is required for BASTD to estimate
 ex-gaussian parameters of response times, you will need to install "retimes"
 package from the CRAN archive.
 
+On Mac:
 retimes will require you to have Xcode 
 (see: https://stackoverflow.com/questions/24194409/how-do-i-install-a-package-that-has-been-archived-from-cran)
 install_url("https://cran.r-project.org/src/contrib/Archive/retimes/retimes_0.1-2.tar.gz") 
 # this will install xcode if you do not already have it installed, followed by retimes
-library(retimes) #initialise retimes
-'''
+library(retimes) # initialise retimes
+
+On Windows:
+url <- "https://cran.r-project.org/src/contrib/Archive/retimes/retimes_0.1-2.tar.gz"
+pkgFile <- "retimes_0.1-2.tar.gz"
+download.file(url = url, destfile = pkgFile)
+install.packages(pkgs=pkgFile, type="source", repos=NULL)
+unlink(pkgFile)
+
+'
 
 # Setup -------------------------------------------------------------------
 # install the latest version of the package -------------------------------
 devtools::install_github("teamOSTAP/BASTD", force = TRUE)
 library(BASTD) 
 library(here)
+library(ggplot2)
+library(ggpubr)
 
 # import example OSARI data  ----------------------------------------------
 example_OSARI_data <- "https://raw.githubusercontent.com/teamOSTAP/BASTD/main/example-data/OSARI_raw.txt"
