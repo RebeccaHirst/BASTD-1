@@ -39,8 +39,8 @@ OSARI_analyze(data = OSARI_data)[[1]] # Subset to all variables
 OSARI_analyze(data = OSARI_data)[[2]] # Subset to just accurate go trials with omissions replaced variables
 OSARI_visualize(OSARI_data) # OSARI visualize
 
-# Analyze all examples ----------------------------------------------------
-# OSARI_analyzed_all creates a folder called 'analyzed' in the specified working directory
+# Analyze OSARI all examples ----------------------------------------------------
+# OSARI_analyze_all creates a folder called 'analyzed' in the specified working directory
 # OSARI_visualized creates a folder called 'visualized' in the specified working directory
 # These scripts work by looking for all the files in that folder with the term 'OSARI' and then analyze or visualize those data
 OSARI_analyze_all(here("example-data")) # analyzed data will be saved as a .csv file
